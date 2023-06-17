@@ -1,0 +1,100 @@
+@import url('reset.css');
+@font-face {
+  font-family: 'montserrat';
+  src: url('/assets/fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: 'montserrat', sans-serif;
+  background-color: gray;
+}
+
+.container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  max-width: 600px;
+  height: 100dvh;
+  margin-inline: auto;
+  background-color: bisque;
+}
+
+header {
+  padding-block: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.accordion {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(107, 28, 35);
+}
+
+.label,
+.content {
+  padding: 14px 20px;
+}
+
+.label {
+  display: block;
+  color: #ffff;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 8px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
+}
+
+.label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  background-color: bisque;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: none;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked ~ .content {
+  display: block;
+}
+
+.input:checked ~ .label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+
+footer {
+  /* position: fixed;
+  bottom: 0; */
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  margin-top: auto;
+  padding-block: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
